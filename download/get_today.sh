@@ -9,3 +9,5 @@ grep -f download/counties.txt plotting/latest.csv | grep Mass >> plotting/valley
 Rscript plotting/plot.R
 
 mv plotting/valley.png site/
+
+aws cloudfront create-invalidation --distribution-id E2RT6I870YM5PU --paths "/*"
