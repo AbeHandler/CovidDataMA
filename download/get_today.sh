@@ -11,3 +11,5 @@ Rscript plotting/plot.R
 mv plotting/valley.png site/
 
 aws cloudfront create-invalidation --distribution-id E2RT6I870YM5PU --paths "/*"
+
+aws s3 cp site/valley.png s3://www.wmasscovid.com/valley.png
