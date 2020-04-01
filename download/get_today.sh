@@ -6,7 +6,7 @@ head -1 plotting/latest.csv > plotting/valley.csv
 
 grep -f download/counties.txt plotting/latest.csv | grep Mass >> plotting/valley.csv
 
-/Library/Frameworks/R.framework/Resources/bin/Rscript plotting/plot.R
+/usr/bin/Rscript plotting/plot.R
 
 mv plotting/valley.png site/
 
