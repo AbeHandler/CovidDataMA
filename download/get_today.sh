@@ -10,8 +10,8 @@ grep -f download/counties.txt plotting/latest.csv | grep Mass >> plotting/valley
 
 mv plotting/valley.png site/
 
-aws cloudfront create-invalidation --distribution-id E2RT6I870YM5PU --paths "/*"
+/home/ahandler/bin/aws cloudfront create-invalidation --distribution-id E2RT6I870YM5PU --paths "/*"
 
-aws s3 cp site/valley.png s3://www.wmasscovid.com/valley.png --acl public-read
+/home/ahandler/bin/aws s3 cp site/valley.png s3://www.wmasscovid.com/valley.png --acl public-read
 
-aws s3 cp site/index.html s3://www.wmasscovid.com/index.html --acl public-read
+/home/ahandler/bin/aws s3 cp site/index.html s3://www.wmasscovid.com/index.html --acl public-read
