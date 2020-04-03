@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+pip install flask
+
 wget https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv -O plotting/latest.csv
 
 head -1 plotting/latest.csv > plotting/valley.csv
