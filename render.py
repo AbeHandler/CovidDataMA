@@ -8,7 +8,7 @@ template = env.get_template('index.html')
 
 import datetime
 
-x = datetime.datetime.now().strftime("%b %-d, %Y")
+x = datetime.datetime.now().strftime("%b %-d, %Y at %I:%M %p")
 
 
 with open("site/index.html", "w") as of:
