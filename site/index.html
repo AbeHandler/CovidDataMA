@@ -43,14 +43,18 @@
 
   gtag('config', 'UA-57735520-5');
 </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.1/d3.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.15/c3.min.js"></script>
 
-  
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.15/c3.min.css">
+
+
 </head>
 <body>
 
 <div class="container-fluid">
   <div class="alert alert-primary" role="alert">
-  Updated Apr 4, 2020 at 06:12 AM 
+  Updated Apr 4, 2020 at 12:14 PM 
   </div>
 </div>
 
@@ -65,6 +69,35 @@
     </div>
   </div>
 </div>
+
+<div id="chart"></div>
+
+
+<script type="text/javascript">
+    var chart = c3.generate({
+         bindto: '#chart',
+        data: {
+            x: 'x',
+    //        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
+            columns: [
+                ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
+    //            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
+                ['data1', 30, 200, 100, 400, 150, 250],
+                ['data2', 130, 340, 200, 500, 250, 350]
+            ]
+        },
+        axis: {
+            x: {
+                type: 'timeseries',
+                tick: {
+                    format: '%Y-%m-%d'
+                }
+            }
+        }
+});
+
+
+</script>
 
 <footer class="container-fluid">
     <div class="row content text-center">
