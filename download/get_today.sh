@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-source activate covid
+set -e
+
+source /home/ahandler/miniconda3/etc/profile.d/conda.sh
+conda activate covid
 
 wget https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv -O plotting/latest.csv
 
