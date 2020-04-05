@@ -24,3 +24,5 @@ python render.py
 /home/ahandler/bin/aws s3 cp site/valley.png s3://www.wmasscovid.com/valley.png --acl public-read
 
 /home/ahandler/bin/aws s3 cp site/index.html s3://www.wmasscovid.com/index.html --acl public-read
+
+/home/ahandler/bin/aws s3 cp plotting/valley.csv s3://www.wmasscovid.com/wmass.csv --acl public-read
