@@ -91,7 +91,7 @@
         axis: {
             x: {
                 type: 'timeseries',
-                label: 'Date',
+                label: {'text':'Date','position': 'outer-center'}
                 tick: {
                     format: '%Y-%m-%d',
                     count:8
@@ -101,7 +101,7 @@
                 type: 'log',
                 min: 0,
                 padding: 0,
-                label: 'Confirmed cases (log scale)',
+                label: {'text':'Confirmed cases (log scale)','position': 'outer-center'}
                 tick: {
                     values: [0, 10, 100, 1000]
                 }
