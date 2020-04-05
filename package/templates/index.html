@@ -66,13 +66,13 @@
 
     <div class="col-sm-12">
             <div class="text-center">
-              <img style="width:100%;max-width: 500px;" src="valley.png" alt="Western Massachusetts Covid Case Counts by time plot">
+              <div style="width:50%;max-width: 500px;margin:auto" id="chart"></div>
             </div>
     </div>
   </div>
 </div>
 
-<div style="width:100%;max-width: 500px;" id="chart"></div>
+
 
 <script type="text/javascript">
     var chart = c3.generate({
@@ -91,14 +91,17 @@
         axis: {
             x: {
                 type: 'timeseries',
+                label: 'Date',
                 tick: {
-                    format: '%Y-%m-%d'
+                    format: '%Y-%m-%d',
+                    count:8
                 }
             },
             y: {
                 type: 'log',
                 min: 0,
                 padding: 0,
+                label: 'Confirmed cases (log scale)',
                 tick: {
                     values: [0, 10, 100, 1000]
                 }
