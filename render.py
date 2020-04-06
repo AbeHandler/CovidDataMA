@@ -51,5 +51,33 @@ txt = txt.replace("NOW", x).replace("DATES", json.dumps(dates))
 for c in county2data:
     txt = txt.replace(c.upper(), json.dumps(county2data[c]))
 
+with open("plotting/table.csv", "r") as inf:
+    reader = csv.reader(inf)
+    next(reader)
+    for rno, r in enumerate(reader):
+        if(rno == 0):
+            # ['Current   (2020-04-03)', '240', '89', '661', '114']
+            txt = txt.replace('CURRENT', r[0])
+            txt = txt.replace('CA', r[1])
+            txt = txt.replace('CB', r[2])
+            txt = txt.replace('CC', r[3])
+            txt = txt.replace('CD', r[4])
+
+        if(rno == 1):
+            # ['Current   (2020-04-03)', '240', '89', '661', '114']
+            txt = txt.replace('PREV', r[0])
+            txt = txt.replace('PA', r[1])
+            txt = txt.replace('PB', r[2])
+            txt = txt.replace('PC', r[3])
+            txt = txt.replace('PD', r[4])
+
+        if(rno == 2):
+            # ['Current   (2020-04-03)', '240', '89', '661', '114']
+            txt = txt.replace('7A', r[1])
+            txt = txt.replace('7B', r[2])
+            txt = txt.replace('7C', r[3])
+            txt = txt.replace('7D', r[4])
+
+
 with open("site/index.html", "w") as of:
     of.write(txt)
