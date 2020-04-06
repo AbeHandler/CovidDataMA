@@ -66,8 +66,10 @@ with open("plotting/table.csv", "r") as inf:
             txt = txt.replace('CD', r[4])
 
         if(rno == 1):
-            # ['Current   (2020-04-03)', '240', '89', '661', '114']
-            txt = txt.replace('PREV', r[0])
+            # ['Prev week (2020-03-29)', '151', '41', '201', '37']
+            y, m, d = r[0].split()[2].replace("(", "").replace(")", "").split("-")
+            dt = datetime(int(y), int(m), int(d)).strftime("%b %e")
+            txt = txt.replace('PREV', "Last week counts (" + dt + ")")
             txt = txt.replace('PA', r[1])
             txt = txt.replace('PB', r[2])
             txt = txt.replace('PC', r[3])
@@ -75,10 +77,10 @@ with open("plotting/table.csv", "r") as inf:
 
         if(rno == 2):
             # ['Current   (2020-04-03)', '240', '89', '661', '114']
-            txt = txt.replace('7A', r[1])
-            txt = txt.replace('7B', r[2])
-            txt = txt.replace('7C', r[3])
-            txt = txt.replace('7D', r[4])
+            txt = txt.replace('7A', r[1] + "x")
+            txt = txt.replace('7B', r[2] + "x")
+            txt = txt.replace('7C', r[3] + "x")
+            txt = txt.replace('7D', r[4] + "x")
 
 
 with open("site/index.html", "w") as of:
