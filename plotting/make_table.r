@@ -13,4 +13,4 @@ row.names(y)[2] = sprintf("Prev week (%s)", x$lastweek[1])
 y[3,] = sapply(x$weekly_growth, function(x) if (x > 1.5) sprintf("%.1f",x) else sprintf("%.2f",x))
 row.names(y)[3] = "7-day growth rate"
 
-print(y)
+write.csv(y, file = "plotting/table.csv")
