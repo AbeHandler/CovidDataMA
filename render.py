@@ -69,7 +69,7 @@ with open("plotting/table.csv", "r") as inf:
             # ['Prev week (2020-03-29)', '151', '41', '201', '37']
             y, m, d = r[0].split()[2].replace("(", "").replace(")", "").split("-")
             dt = datetime(int(y), int(m), int(d)).strftime("%b %e")
-            txt = txt.replace('PREV', "Last week's counts (" + dt + ")")
+            txt = txt.replace('PREV', "Last week counts (" + dt + ")")
             txt = txt.replace('PA', r[1])
             txt = txt.replace('PB', r[2])
             txt = txt.replace('PC', r[3])
