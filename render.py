@@ -57,7 +57,9 @@ with open("plotting/table.csv", "r") as inf:
     for rno, r in enumerate(reader):
         if(rno == 0):
             # ['Current   (2020-04-03)', '240', '89', '661', '114']
-            txt = txt.replace('CURRENT', r[0])
+            y, m, d = r[0].split()[1].replace("(", "").replace(")", "").split("-")
+            dt = datetime(int(y), int(m), int(d)).strftime("%b %e")
+            txt = txt.replace('CURRENT', dt)
             txt = txt.replace('CA', r[1])
             txt = txt.replace('CB', r[2])
             txt = txt.replace('CC', r[3])
