@@ -2,11 +2,6 @@
 
 set -e
 
-#source /home/ahandler/miniconda3/etc/profile.d/conda.sh
-#conda activate covid
-#conda info --envs
-#which python
-
 wget https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv -O plotting/latest.csv
 
 head -1 plotting/latest.csv > plotting/valley.csv
@@ -14,6 +9,8 @@ head -1 plotting/latest.csv > plotting/valley.csv
 grep -f download/counties.txt plotting/latest.csv | grep Mass >> plotting/valley.csv
 
 /usr/bin/Rscript plotting/plot.R
+
+/usr/bin/Rscript plotting/make_table.r
 
 mv plotting/valley.png site/
 
