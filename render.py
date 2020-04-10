@@ -60,27 +60,30 @@ with open("plotting/table.csv", "r") as inf:
             y, m, d = r[0].split()[1].replace("(", "").replace(")", "").split("-")
             dt = datetime(int(y), int(m), int(d)).strftime("%b %e")
             txt = txt.replace('CURRENT', "Latest counts (" + dt + ")")
-            txt = txt.replace('CA', r[1])
-            txt = txt.replace('CB', r[2])
-            txt = txt.replace('CC', r[3])
-            txt = txt.replace('CD', r[4])
+            berkshire, franklin, hampden, hampshire = r[1], r[2], r[3], r[4]
+            txt = txt.replace('CA', berkshire)
+            txt = txt.replace('CB', franklin)
+            txt = txt.replace('CC', hampden)
+            txt = txt.replace('CD', hampshire)
 
         if(rno == 1):
             # ['Prev week (2020-03-29)', '151', '41', '201', '37']
             y, m, d = r[0].split()[2].replace("(", "").replace(")", "").split("-")
             dt = datetime(int(y), int(m), int(d)).strftime("%b %e")
             txt = txt.replace('PREV', "Last week counts (" + dt + ")")
-            txt = txt.replace('PA', r[1])
-            txt = txt.replace('PB', r[2])
-            txt = txt.replace('PC', r[3])
-            txt = txt.replace('PD', r[4])
+            berkshire, franklin, hampden, hampshire = r[1], r[2], r[3], r[4]
+            txt = txt.replace('PA', berkshire)
+            txt = txt.replace('PB', franklin)
+            txt = txt.replace('PC', hampden)
+            txt = txt.replace('PD', hampshire)
 
         if(rno == 2):
             # ['Current   (2020-04-03)', '240', '89', '661', '114']
-            txt = txt.replace('7A', r[1] + "x")
-            txt = txt.replace('7B', r[2] + "x")
-            txt = txt.replace('7C', r[3] + "x")
-            txt = txt.replace('7D', r[4] + "x")
+            berkshire, franklin, hampden, hampshire = r[1], r[2], r[3], r[4]
+            txt = txt.replace('7A', berkshire + "x")
+            txt = txt.replace('7B', franklin + "x")
+            txt = txt.replace('7C', hampden + "x")
+            txt = txt.replace('7D', hampshire + "x")
 
 
 with open("site/index.html", "w") as of:
