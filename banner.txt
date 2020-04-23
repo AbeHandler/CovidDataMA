@@ -1,0 +1,1 @@
+I added a new plot, which shows the average confirmed cases by day. The New York Times and Financial Times are also presenting new cases in this format. I plan to make the new plot interactive shortly. Scroll down to see the old plot, showing confirmed cases by day (using a log scale).
