@@ -45,6 +45,7 @@ if __name__ == "__main__":
 
     with open("plotting/changes.csv", "w") as of:
         writer = csv.writer(of)
+        writer.writerow(["date", "county", "avg"])
 
         for c in county2data:
             some_data = county2data[c]
