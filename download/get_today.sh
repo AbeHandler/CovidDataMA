@@ -38,5 +38,5 @@ python render.py
 
 /home/ahandler/bin/aws s3 cp plotting/valley.csv s3://www.wmasscovid.com/wmass.csv --acl public-read
 
-/home/ahandler/bin/aws s3 cp site/changes.png s3://www.wmasscovid.com/wmass.csv --acl public-read
+/home/ahandler/bin/aws s3 cp site/changes.png s3://www.wmasscovid.com/changes.png --acl public-read
 
