@@ -30,8 +30,6 @@ python render.py
 
 # upload
 
-/home/ahandler/bin/aws cloudfront create-invalidation --distribution-id E2RT6I870YM5PU --paths "/*"
-
 /home/ahandler/bin/aws s3 cp site/valley.png s3://www.wmasscovid.com/valley.png --acl public-read
 
 /home/ahandler/bin/aws s3 cp site/index.html s3://www.wmasscovid.com/index.html --acl public-read
@@ -39,4 +37,8 @@ python render.py
 /home/ahandler/bin/aws s3 cp plotting/valley.csv s3://www.wmasscovid.com/wmass.csv --acl public-read
 
 /home/ahandler/bin/aws s3 cp site/changes.png s3://www.wmasscovid.com/changes.png --acl public-read
+
+# break cache
+
+/home/ahandler/bin/aws cloudfront create-invalidation --distribution-id E2RT6I870YM5PU --paths "/*"
 
