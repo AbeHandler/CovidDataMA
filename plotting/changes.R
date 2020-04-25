@@ -13,7 +13,7 @@ xlab("") +
 theme_minimal() + 
 facet_grid(cols = vars(county)) + 
 scale_x_date(date_breaks = "3 weeks", date_labels = "%m-%d") + 
-ggtitle('Avg. # new confirmed cases, per county') + 
+ggtitle('Avg. # new confirmed cases') + 
 theme(legend.position = "none", text = element_text(size=10), strip.background = element_blank())
 
 width = 4
