@@ -6,8 +6,16 @@ valley <- read_csv("plotting/changes.csv")
 
 valley$county <- factor(valley$county, levels = c("Berkshire", "Hampden", "Franklin", "Hampshire"))
 
-ggplot(valley) + geom_line(aes(x=date, y=avg, color=county), size = 1.5) + scale_color_manual(values = c("#1f77b4", "#FF7F0E", "#2CA02C", "#d62728")) + ylab("Avg. new cases") + xlab("") + theme_minimal() + facet_grid(cols = vars(county)) + theme(legend.position = "none", text = element_text(size=10), strip.background = element_blank(),
-   strip.text.x = element_blank()) + scale_x_date(date_breaks = "3 weeks", date_labels = "%m-%d") + ggtitle('Avg. # new confirmed cases (over past 7 days')
+ggplot(valley) + geom_line(aes(x=date, y=avg, color=county), size = 1.5) + 
+scale_color_manual(values = c("#1f77b4", "#FF7F0E", "#2CA02C", "#d62728")) + 
+ylab("7-day average") + 
+xlab("") + 
+theme_minimal() + 
+facet_grid(cols = vars(county)) + 
+scale_x_date(date_breaks = "3 weeks", date_labels = "%m-%d") + 
+ggtitle('Avg. # new confirmed cases') + 
+theme(legend.position = "none", text = element_text(size=10), strip.background = element_blank(),
+   strip.text.x = element_blank())
 
 width = 4
 height = (9/16) * width
