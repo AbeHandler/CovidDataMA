@@ -14,7 +14,7 @@ theme_minimal() +
 facet_grid(cols = vars(county)) + 
 scale_x_date(date_labels=c("%m/%d","%m/%d"), breaks=c(as.Date("2020-05-01"), Sys.Date())) + 
 ggtitle('Avg. # new confirmed cases') + 
-theme(legend.position = "none", text = element_text(size=10), plot.title = element_text(hjust = 0.5), strip.background = element_blank())
+theme(plot.margin = margin(t=0, r=10, b=0, l=0), legend.position = "none", text = element_text(size=10), plot.title = element_text(hjust = 0.5), strip.background = element_blank())
 
 width = 4
 height = (9/16) * width
